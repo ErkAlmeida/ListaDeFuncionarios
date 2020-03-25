@@ -44,10 +44,13 @@ public class Funcionario
 		}
 	*/
 
-	public double AlteraSalario(Double salario)
+	public double AlteraSalario(Double porcentagem)
 	{
-		return 0;
+		return salario += salario*porcentagem/100;
 	}
 	
-	
+	public String toString() 
+	{
+		return "ID: "+this.id+" - Nome: "+this.nome+" - Salario: "+this.salario;
+	}
 }

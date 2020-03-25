@@ -17,9 +17,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entidades.Funcionario;
+
 public class Programa 
 {
-
 	public static void main(String[] args)
 	{
 		Locale.setDefault(Locale.US);
@@ -30,14 +31,29 @@ public class Programa
 		
 		int qDeCadastro = sc.nextInt();
 		
-		List<String> listF = new ArrayList<>();
+		List<Funcionario> listF = new ArrayList<>();
+		
+		sc.nextLine();//Consumir  quebra da linha pendente
 		
 		for(int i =0; i< qDeCadastro; i++) 
 		{
-
+			System.out.printf("ID:");
+			int id = sc.nextInt();
+			
+			sc.nextLine();
+			System.out.printf("Nome:");
+			String nome = sc.nextLine();
+			
+			System.out.printf("Salario:");
+			double salario = sc.nextDouble();
+			
+			listF.add(new Funcionario(id, nome, salario));
 		}
-
+		
+		for(Funcionario lista : listF) 
+		{
+			System.out.println(lista);
+		}
 		sc.close();	
 	}
-
 }
