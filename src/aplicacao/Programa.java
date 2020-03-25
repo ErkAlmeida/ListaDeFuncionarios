@@ -1,5 +1,4 @@
-import java.util.Locale;
-import java.util.Scanner;
+package aplicacao;
 
 /*
  * FazerumprogramaparalerumnúmerointeiroNedepoisosdados(id,nomeesalario)
@@ -12,7 +11,14 @@ import java.util.Scanner;
  * possa ser mudado livremente. Um salário só pode ser aumentado combase em uma operação de aumento por porcentagem dada
  * 
  */
-public class Programa {
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Programa 
+{
 
 	public static void main(String[] args)
 	{
@@ -20,8 +26,18 @@ public class Programa {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("Digite o numero de funcionarios para o Cadastro: ");
 		
+		int qDeCadastro = sc.nextInt();
+		
+		List<String> listF = new ArrayList<>();
+		
+		for(int i =0; i< qDeCadastro; i++) 
+		{
 
+		}
+
+		sc.close();	
 	}
 
 }
