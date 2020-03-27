@@ -5,7 +5,9 @@ public class Funcionario
 	private Integer id;
 	private String nome;
 	private Double salario;
-
+	
+	//Construtores
+	
 	public Funcionario() {}
 
 	public Funcionario(Integer id, String nome, Double salario) 
@@ -15,6 +17,7 @@ public class Funcionario
 		this.salario = salario;
 	}
 
+	//Gets e Sets
 	public Integer getId() {
 		return id;
 	}
@@ -43,11 +46,15 @@ public class Funcionario
 		this.salario = salario;
 		}
 	*/
-
+	
+	//Metodo para atualização do salarial
+	
 	public double AlteraSalario(Double porcentagem)
 	{
 		return salario += salario*porcentagem/100;
 	}
+	
+	//Metodo toString de retorno 
 	
 	public String toString() 
 	{
