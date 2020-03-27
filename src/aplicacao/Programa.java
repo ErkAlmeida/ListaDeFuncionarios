@@ -65,13 +65,20 @@ public class Programa
 		double idParaAumento = sc.nextDouble();
 				
 		Funcionario func = listF.stream().filter(x -> x.getId() == idParaAumento).findFirst().orElse(null);
-	
+		if(func == null)
+		{
+		
+			System.out.println("ID não em contrado");
+		}else {
+						
 		System.out.println();
 		
 		System.out.print("Porcentagem: ");
 		double porcentagem = sc.nextDouble();
 			
 		func.AlteraSalario(porcentagem);
+		
+		}
 		
 		System.out.println("===========================================================");
 		
