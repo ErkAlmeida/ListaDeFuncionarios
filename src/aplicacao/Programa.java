@@ -61,24 +61,28 @@ public class Programa
 		
 		System.out.println("Digite o ID do funcionario para aumentar o salario");
 		
-		System.out.print("ID: ");
-		double idParaAumento = sc.nextDouble();
-				
-		Funcionario func = listF.stream().filter(x -> x.getId() == idParaAumento).findFirst().orElse(null);
-		if(func == null)
+		Funcionario func;
+		do 
 		{
+			System.out.print("ID: ");
 		
-			System.out.println("ID não em contrado");
-		}else {
-						
-		System.out.println();
-		
-		System.out.print("Porcentagem: ");
-		double porcentagem = sc.nextDouble();
+			double idParaAumento = sc.nextDouble();
 			
-		func.AlteraSalario(porcentagem);
+			func = listF.stream().filter(x -> x.getId() == idParaAumento).findFirst().orElse(null);
+			if(func == null)
+			{
+				System.out.println("ID não em contrado");
+			}else {
+						
+				System.out.println();
 		
-		}
+				System.out.print("Porcentagem: ");
+				double porcentagem = sc.nextDouble();
+			
+				func.AlteraSalario(porcentagem);
+			}
+			
+		}while(func == null);
 		
 		System.out.println("===========================================================");
 		
