@@ -1,10 +1,11 @@
 package aplicacao;
 
 /*
- * FazerumprogramaparalerumnúmerointeiroNedepoisosdados(id,nomeesalario)
- * de Nfuncionários.Nãodevehaverrepetiçãodeid.
+ * Fazer um programa para ler um número inteiro N e depois os dados(id,nome e salario)
+ * de N funcionários. 
+ * Não deve haver repetição de id.
  * Em seguida, efetuar o aumento de X por cento no salário de um determinado funcionário. 
- * Paraisso,o programa deve ler um id eo valor X.
+ * Para isso,o programa deve ler um id eo valor X.
  * Se o id informado não existir, mostrar uma mensagem e abortar a operação. 
  * Ao final, mostrar a listagem atualizada dos funcionários, conformeexemplos.
  * Lembre-se de aplicar a técnica de encapsulamento para não permitir que o salário 
@@ -39,7 +40,6 @@ public class Programa
 		{
 			System.out.printf("ID:");
 			int id = sc.nextInt();
-			
 			sc.nextLine();
 			System.out.printf("Nome:");
 			String nome = sc.nextLine();
@@ -50,10 +50,36 @@ public class Programa
 			listF.add(new Funcionario(id, nome, salario));
 		}
 		
+		System.out.println("===========================================================");
+		
 		for(Funcionario lista : listF) 
 		{
 			System.out.println(lista);
 		}
+		
+		System.out.println("===========================================================");
+		
+		System.out.println("Digite o ID do funcionario para aumentar o salario");
+		
+		System.out.print("ID: ");
+		double idParaAumento = sc.nextDouble();
+				
+		Funcionario func = listF.stream().filter(x -> x.getId() == idParaAumento).findFirst().orElse(null);
+	
+		System.out.println();
+		
+		System.out.print("Porcentagem: ");
+		double porcentagem = sc.nextDouble();
+			
+		func.AlteraSalario(porcentagem);
+		
+		System.out.println("===========================================================");
+		
+		for(Funcionario lista : listF) 
+		{
+			System.out.println(lista);
+		}
+		
 		sc.close();	
 	}
 }
